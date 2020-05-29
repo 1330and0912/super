@@ -77,7 +77,7 @@
 
                 // 1.开始滚动动画
                 this.swiperStyle.transition = 'transform ' + this.animDuration + 'ms';
-                console.log(this.swiperStyle.transition);
+                // console.log(this.swiperStyle.transition);
                 this.setTransform(currentPosition);
                 // console.log(this.swiperStyle);
                 // 2.判断滚动到的位置
@@ -94,7 +94,7 @@
                 window.setTimeout(() => {
                     // 1.校验正确的位置
                     this.swiperStyle.transition = '0ms';
-                    console.log(this.swiperStyle.transition);
+                    // console.log(this.swiperStyle.transition);
                     if (this.currentIndex >= this.slideCount + 1) {
                         this.currentIndex = 1;
                         this.setTransform(-this.currentIndex * this.totalWidth);
@@ -229,6 +229,7 @@
     }
 
     .indicator {
+        /*background-color:saddlebrown;*/
         display: flex;
         justify-content: center;
         position: absolute;
@@ -240,7 +241,7 @@
         box-sizing: border-box;
         width: 8px;
         height: 8px;
-        border-radius: 4px;
+        border-radius: 50%;
         background-color: #fff;
         line-height: 8px;
         text-align: center;
