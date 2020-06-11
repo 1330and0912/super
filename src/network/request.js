@@ -15,7 +15,7 @@ export function request(config) {
     //响应拦截器
 	instance.interceptors.response.use(
 		result => {
-			return result
+			return result.data
 		},
 		err => err
 	)

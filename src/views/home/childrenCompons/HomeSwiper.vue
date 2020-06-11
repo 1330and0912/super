@@ -24,6 +24,9 @@
                     return []
                 }
             }
+        },
+        mounted() {
+            console.log('this is HomeSwiper');
         }
     }
 </script>
