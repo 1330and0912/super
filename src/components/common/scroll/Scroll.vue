@@ -29,9 +29,12 @@
             }
         },
         mounted() {
-            this.initBScroll()
-            this.scrolling()
-            this.pullingUp()
+
+            this.initBScroll && this.initBScroll()
+            this.scrolling && this.scrolling()
+            this.pullUpLoad && this.pullingUp()
+
+
         },
         methods: {
             //x，y:坐标
@@ -45,21 +48,23 @@
                 })
             },
             initBScroll() {
-                const el = this.$refs.scrollWrapper
+                let el = this.$refs.scrollWrapper
                 this.scroll = new BScroll(el, {
                     click: true,
                     probeType: this.probeType,
-                    pullUpLoad: this.pullUpLoad
+                    pullUpLoad: this.pullUpLoad,
+                    useTransition:false
                 })
             },
             pullingUp() {
                 this.scroll.on('pullingUp', () => {
                     this.$emit('pullingUp')
+                    this.refresh()
                 })
             },
             finishPullUp() {
                 this.scroll.finishPullUp()
-                console.log('加载完成');
+                // console.log('加载完成');
             },
             refresh() {
                 console.log('refresh');

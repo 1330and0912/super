@@ -44,13 +44,13 @@
 <style scoped>
     .detail-swipe {
         width: 100%;
-        height: 316px;
+        height: 280px;
         overflow: hidden;
         position: relative;
     }
     img {
         width: 100%;
-        height: 316px;
+        height: 100%;
     }
     .van-swipe-item {
         float: left;

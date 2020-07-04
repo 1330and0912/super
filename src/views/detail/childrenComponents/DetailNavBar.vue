@@ -1,7 +1,7 @@
 <template>
     <div class="detail-nav-bar">
         <nav-bar class="nav-bar">
-            <template  slot="left">
+            <template slot="left">
                 <img @click="back" class="back" slot="left" src="~assets/img/common/back.svg" alt="">
             </template>
             <ul class="nav" slot="center">
@@ -29,6 +29,7 @@
         methods: {
             isActiveNavBar(index) {
                 this.currentIndex = index
+                this.$emit('titleClick', index) //监听导航栏跳转功能
             },
             back() {
                 this.$router.back()
@@ -56,6 +57,7 @@
         margin-top: 10px;
         margin-left: 20px;
     }
+
     .active-title {
         color: var(--color-tint);
     }

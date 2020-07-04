@@ -9,6 +9,11 @@ export function getDetail(iid) {
     })
 }
 
+export function getRecommend() {
+    return request({
+        url: '/recommend'
+    })
+}
 //抽取商品基本信息
 export class Goods {
     constructor(itemInfo, columns, services) {

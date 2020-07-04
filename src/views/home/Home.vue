@@ -91,7 +91,7 @@
             //上拉加载
             pullOnLoad() {
                 this.getProductData(this.currentGoodsType)
-                console.log('1');
+
             },
             //tab栏切换
             tabClick(index) {
@@ -122,6 +122,7 @@
                 let refresh = debounce(this.$refs.scroll.refresh, 100)
                 this.$bus.$on('goodsItemImgLoaded', () => {
                     refresh && refresh()
+                    console.log('home');
                 })
             }
 

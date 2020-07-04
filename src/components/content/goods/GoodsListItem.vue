@@ -1,6 +1,6 @@
 <template>
     <div @click="goDetail" class="goods-list-item">
-        <img :src="goodsItem.show.img" alt="">
+        <img :src="productImg" alt="">
         <p class="title">{{goodsItem.title}}</p>
         <div class="introduction">
             <span class="price">{{goodsItem.price}}</span>
@@ -24,11 +24,17 @@
                 return {}
             }
         },
+
         data() {
             return {
                 isMove: true,//判断是否有移动鼠标
                 collectImgPath: require('D:\\web\\supermall\\src\\assets\\img\\common\\favor.png'),
                 isCollect: false
+            }
+        },
+        computed: {
+            productImg() {
+                return this.goodsItem.image || this.goodsItem.show.img
             }
         },
         methods: {
@@ -50,9 +56,9 @@
             },
             goDetail() {
                 this.$router.push({
-                    name:'detail',
-                    params:{
-                        id:this.goodsItem.iid
+                    name: 'detail',
+                    params: {
+                        id: this.goodsItem.iid
                     }
                 })
             }
@@ -67,13 +73,13 @@
         border-radius: 5px;
         box-shadow: 0px 0px 5px rgba(22, 20, 20, .2);
         width: 48%;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         padding-bottom: 5px;
     }
 
     .goods-list-item > img {
         width: 100%;
-        height: 260px;
+        height: 240px;
         border-radius: 5px;
     }
 
